@@ -14,6 +14,7 @@
 		7315337C1BFE5D260021FFA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7315337A1BFE5D260021FFA9 /* LaunchScreen.storyboard */; };
 		731533871BFE5D260021FFA9 /* StarWarsVIITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731533861BFE5D260021FFA9 /* StarWarsVIITests.swift */; };
 		731533941BFE60640021FFA9 /* StarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731533931BFE60640021FFA9 /* StarWarsCharacter.swift */; };
+		731533971BFE7C620021FFA9 /* Affiliations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731533961BFE7C620021FFA9 /* Affiliations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		731533881BFE5D260021FFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		731533931BFE60640021FFA9 /* StarWarsCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StarWarsCharacter.swift; path = Models/StarWarsCharacter.swift; sourceTree = "<group>"; };
 		731533951BFE65410021FFA9 /* Misc.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Misc.playground; sourceTree = "<group>"; };
+		731533961BFE7C620021FFA9 /* Affiliations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Affiliations.swift; path = Models/Affiliations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				731533931BFE60640021FFA9 /* StarWarsCharacter.swift */,
+				731533961BFE7C620021FFA9 /* Affiliations.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				731533741BFE5D260021FFA9 /* ViewController.swift in Sources */,
 				731533941BFE60640021FFA9 /* StarWarsCharacter.swift in Sources */,
+				731533971BFE7C620021FFA9 /* Affiliations.swift in Sources */,
 				731533721BFE5D260021FFA9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

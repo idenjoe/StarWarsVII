@@ -16,7 +16,7 @@ class StarWarsCharacter {
     let alias       :   String?
     let photo       :   UIImage
     let url         :   NSURL
-    let affiliation :   String
+    let affiliation :   StarWarsAffiliation
     let soundData   :   NSData
     
     //MARK: - Init
@@ -26,7 +26,7 @@ class StarWarsCharacter {
         soundData: NSData,
         photo: UIImage,
         url: NSURL,
-        affiliation: String){
+        affiliation: StarWarsAffiliation){
         
             self.firstName = firstName;
             self.lastName = lastName;
@@ -35,6 +35,21 @@ class StarWarsCharacter {
             self.url = url;
             self.affiliation = affiliation;
             self.soundData = soundData;
+    }
+    
+    convenience init(alias : String?,
+        soundData: NSData,
+        photo: UIImage,
+        url: NSURL,
+        affiliation: StarWarsAffiliation){
+            
+            self.init(firstName: nil,
+                lastName: nil,
+                alias: alias,
+                soundData: soundData,
+                photo: photo,
+                url: url,
+                affiliation: affiliation)
     }
     
 }
