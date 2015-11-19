@@ -19,6 +19,29 @@ class StarWarsCharacter {
     let affiliation :   StarWarsAffiliation
     let soundData   :   NSData
     
+    //MARK: - Computed Variables
+    var name : String? {
+        get{
+            guard firstName == nil && lastName == nil else{
+                //cuando los dos sean no nulos
+                return "\(firstName) \(lastName)"
+            }
+            
+            
+            guard let firstName = firstName else{
+                
+                return lastName
+            }
+            
+            guard let _ = lastName else{
+                
+                return firstName
+            }
+            
+            return ""
+        }
+    }
+    
     //MARK: - Init
     init(firstName: String?,
         lastName : String?,

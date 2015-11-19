@@ -37,3 +37,12 @@ if ((cajaDeTexto?.hasPrefix("No")) != nil && cajaDeTexto?.hasPrefix("No") == tru
 
 // Abrir la caja por cojones.
 print(cajaDeTexto!)
+
+// If desempaquetando varias cosas
+
+let url : String? = "http://www.keepcoding.iorl"
+
+if let urlString = url,
+    realUrl = NSURL(string: urlString){
+    //Sé por narices, que urlString y realUrl tienen valores no nulos
+}
