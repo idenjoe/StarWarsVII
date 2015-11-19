@@ -11,12 +11,30 @@ import UIKit
 class StarWarsCharacter {
     
     //MARK: - Properties    
-    let firstName   :   String = ""
-    let lastNamame  :   String = ""
-    let alias       :   String = ""
-//    let photo       :   UIImage
-//    let url         :   NSURL
-    let affiliation :   String = ""
+    let firstName   :   String?
+    let lastName  :   String?
+    let alias       :   String?
+    let photo       :   UIImage
+    let url         :   NSURL
+    let affiliation :   String
+    let soundData   :   NSData
     
+    //MARK: - Init
+    init(firstName: String?,
+        lastName : String?,
+        alias : String?,
+        soundData: NSData,
+        photo: UIImage,
+        url: NSURL,
+        affiliation: String){
+        
+            self.firstName = firstName;
+            self.lastName = lastName;
+            self.alias = alias;
+            self.photo = photo;
+            self.url = url;
+            self.affiliation = affiliation;
+            self.soundData = soundData;
+    }
     
 }
