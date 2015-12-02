@@ -24,7 +24,7 @@ class ForceSensitive: StarWarsCharacter {
         url: NSURL,
         affiliation: StarWarsAffiliation,
         midichlorians: Int) {
-        
+            
             self.midichlorians = midichlorians
             super.init(firstName: firstName,
                 lastName: lastName,
@@ -71,5 +71,19 @@ class ForceSensitive: StarWarsCharacter {
                 url: url,
                 affiliation: .GalacticEmpire,
                 midichlorians: midichlorians)
+    }
+    
+    //MARK: Override
+    override var proxyForComparison: String {
+        get{
+            return "\(super.proxyForComparison)\(midichlorians)"
+        }
+    }
+    
+    override var proxyForSorting: String {
+        get{
+            let isSith = ((affiliation == .GalacticEmpire) || (affiliation == .FirstOrder)) ? "Z" : "X"
+            return "\(isSith)\(super.proxyForSorting)\(midichlorians)"
+        }
     }
 }

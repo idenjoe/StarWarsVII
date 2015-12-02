@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StarWarsCharacter {
+class StarWarsCharacter: Comparable {
     
     //MARK: - Properties    
     let firstName   :   String?
@@ -24,7 +24,7 @@ class StarWarsCharacter {
         get{
             guard firstName == nil && lastName == nil else{
                 //cuando los dos sean no nulos
-                return "\(firstName) \(lastName)"
+                return "\(firstName!) \(lastName!)"
             }
             
             
@@ -75,4 +75,52 @@ class StarWarsCharacter {
                 affiliation: affiliation)
     }
     
+    //MARK: - Proxies
+    var proxyForComparison : String{
+        
+        get{
+            return "\(firstName)\(lastName)\(alias)\(url)\(affiliation)"
+        }
+    }
+    
+    var proxyForSorting : String{
+        get{
+            return "A\(firstName)\(lastName)\(alias)"
+        }
+    }
+    
+}
+
+extension StarWarsCharacter: CustomStringConvertible{
+    var description: String{
+        get{
+            if let name = name, alias = alias{
+                return "<\(self.dynamicType): \(name) \(alias)>"
+            }else{
+                return "<\(self.dynamicType)>"
+            }
+        }
+    }
+}
+
+//MARK: Operators
+
+func ==(lhs: StarWarsCharacter, rhs: StarWarsCharacter) -> Bool{
+    
+    //1er caso: son el mismo objeto
+    guard !(lhs === rhs) else{
+        return true
+    }
+    
+    //2º caso: tienen clases distintas
+    guard lhs.dynamicType == rhs.dynamicType else{
+        return false
+    }
+    
+    // Caso genérico
+    return (lhs.proxyForComparison == rhs.proxyForComparison)
+}
+
+func <(lhs: StarWarsCharacter, rhs: StarWarsCharacter) -> Bool{
+    return (lhs.proxyForSorting < rhs.proxyForSorting)
 }
