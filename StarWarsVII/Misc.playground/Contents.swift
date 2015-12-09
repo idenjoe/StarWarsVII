@@ -46,3 +46,25 @@ if let urlString = url,
     realUrl = NSURL(string: urlString){
     //Sé por narices, que urlString y realUrl tienen valores no nulos
 }
+
+
+//: Subcripts - Funciones con sintaxis de indexado
+class Numbers{
+    let evens = [2,4,6,8]
+    let odds = [1,3,5,7,9]
+    
+    // Subscripts para acceder a números mediante índice
+    // Usamos un nombre externo para distinguir los tipos de números.
+    
+    subscript(evenAtIndex idx: Int) -> Int{
+        get{
+            return evens[idx]
+        }
+    }
+    
+    subscript(oddAtIndex idx: Int) -> Int{
+        get{
+            return odds[idx]
+        }
+    }
+}
