@@ -98,3 +98,21 @@ func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
     return StrictForceSensitive(character: try decode(starWarsCharacter: json),
         midichlorians: md)
 }
+
+
+//MARK: - Initialization
+
+extension StarWarsCharacter{
+    // Un init que acepta los parámetros empaquetados en un StrictStarWarsCharacters
+    
+    convenience init(strictStarWarsCharacter c: StrictStarWarsCharacter){
+        
+        self.init(firstName: c.firstName,
+            lastName : c.lastName,
+            alias : c.alias,
+            soundData: c.soundData,
+            photo: c.photo,
+            url: c.url,
+            affiliation: c.affiliation)
+    }
+}
