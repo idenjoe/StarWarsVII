@@ -109,6 +109,7 @@
 		73A81AF51C0F8CBE00496BED /* vader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vader.jpg; sourceTree = "<group>"; };
 		73A81AF61C0F8CBE00496BED /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
 		73A81AF71C0F8CBE00496BED /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
+		73F23EA21C1B592000BCAE67 /* deberes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = deberes.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +153,7 @@
 			children = (
 				73A349D31C17010D0063ABBE /* Framework */,
 				731533911BFE60210021FFA9 /* App */,
+				73F23EA21C1B592000BCAE67 /* deberes.md */,
 			);
 			path = StarWarsVII;
 			sourceTree = "<group>";
