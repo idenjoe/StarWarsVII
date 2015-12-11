@@ -99,6 +99,24 @@ func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
         midichlorians: md)
 }
 
+func decode(starWarsCharacters json: JSONArray) -> [StrictStarWarsCharacter]{
+    
+    // Patearse todo el JSONArray
+    // JSONDict que veo JSONDict que convierto en StrictStarWarsCharacter
+    var arrayCharacters = [StrictStarWarsCharacter]()
+    
+    do{
+        for dict in json{
+            let strictCharacter = try decode(starWarsCharacter: dict)
+            arrayCharacters.append(strictCharacter)
+        }
+    }catch{
+        fatalError("Ahora sí que la jodimos")
+    }
+    
+    return arrayCharacters
+}
+
 
 //MARK: - Initialization
 
@@ -114,5 +132,17 @@ extension StarWarsCharacter{
             photo: c.photo,
             url: c.url,
             affiliation: c.affiliation)
+    }
+}
+
+extension StarWarsUniverse{
+    convenience init(starWarsCharacters c: [StrictStarWarsCharacter]){
+        var chars = [StarWarsCharacter]()
+        for each in c{
+            let character = StarWarsCharacter(strictStarWarsCharacter: each)
+            chars.append(character)
+        }
+        
+        self.init(arrayOfCharacters: chars)
     }
 }

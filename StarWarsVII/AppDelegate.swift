@@ -49,6 +49,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vader = ForceSensitive(sithWithFirstName: "Anakin", lastName: "Skywalker", alias: "Darth Vader", soundData: soundFile, photo: image, url: wikiURL, midichlorians: 15_000)
             print(vader)
         }
+        
+        
+        // Probar parseado de JSON e inicialización de objetos del modelo
+        
+        do{
+            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+            data = NSData(contentsOfURL: url),
+            characters = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray
+            {                
+                // Crear mi universo de Star Wars a partir del array que ya tengo
+                let strictChars = decode(starWarsCharacters: characters)
+                let universe = StarWarsUniverse(starWarsCharacters: strictChars)
+                print(universe)
+            }
+    
+        }catch{
+            print("la cagamos al parsear el JSON")
+        }
     }
 
 }
